@@ -25,20 +25,39 @@ class Produto extends CI_Controller{
 
                 
     }
+
+
+
     function formulario_produto(){
         $this->load->view('formulario_produto');
     }
     
+
+    public function store(){
+        $produto = $_POST;
+
+        // pega o metodo store no modelo de Produto
+        $this->ProdutoModel->store($produto);
+
+        redirect("produto");
+    }
 
     public function edit($id){
 
         $dados['produto'] = $this->ProdutoModel->show($id);
         
         // Carregando o header
-        $this->load->view('templates/header', $dados);
+        //$this->load->view('templates/header', $dados);
 
         // Carrega a view e mostra os dados da tabela usuario
         $this->load->view('formulario_produto', $dados);
+
+    }
+    public function update($id){
+        $produto = $_POST;
+        $this->ProdutoModel->update($id, $produto);
+
+        redirect("produto");
 
     }
     

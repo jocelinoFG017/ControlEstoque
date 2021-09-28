@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Lista Produtos </title>
+        <title>Cadastro Produtos </title>
         <!-- jquery-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
         
@@ -34,86 +34,73 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <a href="#!" class="brand-logo">Controle de Estoque</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-      <li><a href="<?=base_url('pages\usuario')?>">Usuarios</a></li>
-         <li><a href="<?=base_url('pages\produto')?>">Produtos</a></li>
+      <li><a href="<?=base_url('usuario')?>">Usuarios</a></li>
+         <li><a href="<?=base_url('produto')?>">Produtos</a></li>
       </ul>
     </div>
   </nav>
-
+  <div class='container'>
   <h1> Cadastro de Produtos</h1>
   
-<form method="post" action="gravar"> 
+  <?php if(isset($produto)) : ?>
+    <form action="<?= base_url()?>produto/update/<?= $produto['idProduto'] ?>" method="post"> 
+  <?php else : ?>
+    <form action="<?= base_url()?>produto/store" method="post"> 
+  <?php endif; ?>
+
   
 <div class="row">
     <div class="input-field col s6">
-      <input  id="txtNome" type="text" name="nome" class="validate">
-      <label class="active" for="txtNome">Nome</label>
+      <input id="nome" type="text" name="nome" class="validate" required value="<?= isset($produto) ? $produto['nome'] : "" ?>">
+      <label class="active" for="nome">Nome</label>
     </div>
   </div>
   <div class="row">
     <div class="input-field col s6">
-      <input  id="txtLogin" type="text" name="login" class="validate">
-      <label class="active" for="txtLogin">Login</label>
+      <input  id="descricao" type="text" name="descricao" class="validate" required value="<?= isset($produto) ? $produto['descricao'] : "" ?>">
+      <label class="active" for="descricao">Descricao</label>
     </div>
   </div>
   <div class="row">
     <div class="input-field col s6">
-      <input  id="txtSenha" type="text" name="senha" class="validate">
-      <label class="active" for="txtSenha">Senha</label>
+      <input  id="valor" type="numeric" name="valor" class="validate" required value="<?= isset($produto) ? $produto['valor'] : "" ?>">
+      <label class="active" for="valor">Valor</label>
     </div>
   </div>
   <div class="row">
     <div class="input-field col s6">
-      <input  id="txtCargo" type="text" name="cargo" class="validate">
-      <label class="active" for="txtCargo">Cargo</label>
+      <input  id="quantidade" type="text" name="quantidade" class="validate" required value="<?= isset($produto) ? $produto['quantidade'] : "" ?>">
+      <label class="active" for="quantidade">Quantidade</label>
     </div>
   </div>
   <div class="row">
-  <button class="btn waves-effect waves-light" type="submit" name="action">Gravar
+    <div class="input-field col s6">
+      <input  id="data_cadastro" type="date" name="data_cadastro" class="validate" required value="<?= isset($produto) ? $produto['data_cadastro'] : "" ?>">
+      <label class="active" for="data_cadastro">Data Cadastro</label>
+    </div>
+  </div>
+
+  <div class="row">
+  <button type="submit" class="btn waves-effect waves-light">Gravar
     <i class="material-icons right">send</i>
   </button>
+
+  <a href="<?= base_url() ?>produto" class="btn waves-effect waves-light" style="background-color:blueviolet;"> Cancelar
+    <i class="material-icons right">clear</i></a>
+  
   </div>
+
+  
         
 
 </form>
-
-
-
+  </div>
 
   <ul class="sidenav" id="mobile-demo">
     <li><a href="#">Login</a></li>
   </ul>
           
         
-<!--
-    <nav class="nav-extended black">
-            <div class="nav-wrapper">
-                <a href="home" class="brand-logo center">Estoque</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            </div>
-            nav>-->
-
-  <!--
-            <div class="nav-content">
-                <ul class="tabs tabs-transparent">
-                    <li class="tab"><a href="saint">Personagens</a></li>
-                    <li class="tab"><a href="home/login">Login</a></li>
-                    <li class="tab"><a class="active" href="<?=base_url('saint/formulario')?>">Cadastro</a></li>
-                    <li class="tab"><a class="active" href="<?=base_url('saint/sobre')?>">Sobre</a></li>
-                </ul>
-            </div>
-        </nav>
-       
-        <ul class="sidenav" id="mobile-demo">
-            <li class="tab"><a href="saint">Personagens</a></li>
-            <li class="tab"><a class="active" href="<?=base_url('saint/formulario')?>">Cadastro</a></li>
-            <li class="tab"><a class="active" href="<?=base_url('saint/sobre')?>">Sobre</a></li>
-            <img src="images/uni.jpg" style="width: 100%; height: 80%; position: absolute;" />
-            
-        </ul> -->
-<!--        <img src="images/img2.jpg" style="width: 100%; height: 100%;" />-->
-    
-
     </body>
 </html>
 

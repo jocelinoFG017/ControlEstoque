@@ -47,7 +47,7 @@ $this->load->model('UsuarioModel');
         $dados['usuario'] = $this->UsuarioModel->show($id);
         
         // Carregando o header
-        $this->load->view('templates/header', $dados);
+        //$this->load->view('templates/header', $dados);
 
         // Carrega a view e mostra os dados da tabela usuario
         $this->load->view('formulario', $dados);
@@ -59,7 +59,7 @@ $this->load->model('UsuarioModel');
         $usuario = $_POST;
         $this->UsuarioModel->update($id, $usuario);
 
-        redirect("home_page");
+        redirect("usuario");
 
     }
     

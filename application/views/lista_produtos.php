@@ -53,7 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <td> <?=$produto['data_cadastro']?></td>
                <td>
                     
-                <a href="<?= base_url()?>usuario/edit/<?=$produto['idProduto'] ?>">
+                <a href="<?= base_url()?>produto/edit/<?=$produto['idProduto'] ?>">
                     <i class="small material-icons">edit</i>
                     </a>
 
