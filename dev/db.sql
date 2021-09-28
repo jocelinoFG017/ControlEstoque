@@ -6,7 +6,7 @@ use estoque;
 
 -- Tabela Produtos
 
-CREATE TABLE IF NOT EXISTS Produto (
+CREATE TABLE IF NOT EXISTS produto (
   idProduto smallINT(11) NOT NULL auto_increment,
   nome VARCHAR(45) NOT NULL,
   descricao VARCHAR(70) NOT NULL,
@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS Produto (
 
 -- Tabela Usuarios
 
-CREATE TABLE IF NOT EXISTS Usuario(
+CREATE TABLE IF NOT EXISTS usuario(
   idUsuario INT NOT NULL auto_increment,
   nome VARCHAR(45) NOT NULL,
   login VARCHAR(45) NOT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS Usuario(
 
 --  Tabela Cargo
 
-CREATE TABLE IF NOT EXISTS Cargo(
+CREATE TABLE IF NOT EXISTS cargo(
   idCargo INT NOT NULL auto_increment,
   usuario INT,
   PRIMARY KEY(idCargo),

@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Home </title>
+        <title>Lista Usuarios </title>
         <!-- jquery-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
         
@@ -26,18 +26,44 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </head>
     <body>
 
-
+<?php 
+    $this->load->view('\templates\header');
+?>
     
 
-    <nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Controle de Estoque</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="<?=base_url('user\usuario')?>">Usuarios</a></li>
-      </ul>
-    </div>
-  </nav>
+
+
+<div class='container'>
+<h3> Listagem de Usuarios</h3>      
+  <table class="striped">
+        <thead>
+          <tr>    
+          <th>#</th>
+          <th>Nome</th>
+              <th>login</th>
+              <th>senha</th>
+              <th>cargo</th>
+              <th>Ação</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <?php foreach($usuarios as $usu ) { ?>
+            <tr>
+            <td> <?=$usu['idUsuario']?></td>    
+            <td> <?=$usu['nome']?></td>
+                <td> <?=$usu['login']?></td>
+                <td> <?=$usu['senha']?></td>
+                <td> <?=$usu['cargo']?></td>
+                <td> action</td>
+            </tr>
+            <?php } ?>
+        </tbody>
+      </table>
+      <a href="usuario/formulario" class="right btn-floating btn-large waves-effect waves-light red">
+          <i class="material-icons">add</i></a>
+            
+          </div>
 
   <ul class="sidenav" id="mobile-demo">
     <li><a href="#">Login</a></li>

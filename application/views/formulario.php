@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Home </title>
+        <title>Lista Usuarios </title>
         <!-- jquery-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
         
@@ -38,6 +38,45 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       </ul>
     </div>
   </nav>
+
+  <h1> Cadastro de Usuarios</h1>
+<form method="post" action="gravar"> 
+  
+<div class="row">
+    <div class="input-field col s6">
+      <input  id="txtNome" type="text" name="nome" class="validate">
+      <label class="active" for="txtNome">Nome</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s6">
+      <input  id="txtLogin" type="text" name="login" class="validate">
+      <label class="active" for="txtLogin">Login</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s6">
+      <input  id="txtSenha" type="text" name="senha" class="validate">
+      <label class="active" for="txtSenha">Senha</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s6">
+      <input  id="txtCargo" type="text" name="cargo" class="validate">
+      <label class="active" for="txtCargo">Cargo</label>
+    </div>
+  </div>
+  <div class="row">
+  <button class="btn waves-effect waves-light" type="submit" name="action">Gravar
+    <i class="material-icons right">send</i>
+  </button>
+  </div>
+        
+
+</form>
+
+
+
 
   <ul class="sidenav" id="mobile-demo">
     <li><a href="#">Login</a></li>
