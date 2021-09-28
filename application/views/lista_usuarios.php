@@ -57,7 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <i class="small material-icons">edit</i>
                     </a>
 
-                    <a href="<?= base_url()?>Usuario/delete/<?=$usuario['idUsuario'] ?>" > 
+                    <a href="javascript:goDelete(<?=$usuario['idUsuario'] ?>)" > 
                     <i class="small material-icons">delete</i>
                     </a>
 
@@ -77,5 +77,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           
 
     </body>
-</html>
+    <script>
+        function goDelete(id){
+            var myUrl = "Usuario/delete/"+id; 
+            var url2 = "Usuario";
 
+            if(confirm("Tem certeza ?")){
+                window.location.href = myUrl;
+            }else{
+                alert("Nada alterado");
+                window.location.href = url;
+            }
+        }
+        </script>
+</html>

@@ -43,7 +43,6 @@ class UsuarioModel extends CI_Model{
     }
 
 
-
     public function destroy($idUsuario){
         $this->db->where("idUsuario",$idUsuario);
         return $this->db->delete("usuario");

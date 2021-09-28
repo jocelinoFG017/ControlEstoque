@@ -4,9 +4,16 @@ class Usuario extends CI_Controller{
 /**
 *   Classe controller de Usuario
 */
+
+public function __construct(){
+    parent::__construct();
+// Carregando modelo de Usuario
+$this->load->model('UsuarioModel');
+}
+
+
     function index(){
-        // Carregando modelo de Usuario
-        $this->load->model('UsuarioModel');
+        
 
         // Chama o metodo listar Usuarios do modelo e atribui a uma variavel, passando como parametro
         // o objeto a ser utilizado posteriormente na view 
@@ -29,8 +36,6 @@ class Usuario extends CI_Controller{
     public function store(){
         $usuario = $_POST;
 
-        // Carrega o modelo
-        $this->load->model('UsuarioModel');
         // pega o metodo store no modelo de Usuario
         $this->UsuarioModel->store($usuario);
 
@@ -38,7 +43,6 @@ class Usuario extends CI_Controller{
     }
 
     public function edit($id){
-        $this->load->model('UsuarioModel');
 
         $dados['usuario'] = $this->UsuarioModel->show($id);
         
@@ -52,7 +56,6 @@ class Usuario extends CI_Controller{
 
 
     public function update($id){
-        $this->load->model('UsuarioModel');
         $usuario = $_POST;
         $this->UsuarioModel->update($id, $usuario);
 
@@ -77,11 +80,8 @@ class Usuario extends CI_Controller{
     
 
     function delete($idUsuario){
-        // Carrega o modelo de usuario
-        $this->load->model('UsuarioModel');
         // exclui o dado da tabela pelo seu id
         $this->UsuarioModel->destroy($idUsuario);
-
 
         redirect("usuario");
 
