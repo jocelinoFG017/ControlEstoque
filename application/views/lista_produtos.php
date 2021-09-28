@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Lista Usuarios </title>
+        <title>Lista Produtos </title>
         <!-- jquery-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
         
@@ -28,45 +28,40 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     
 
 
-
 <div class='container'>
-<h3> Listagem de Usuarios</h3>      
+<h3> Listagem de Produtos</h3>      
   <table class="striped">
         <thead>
           <tr>    
           <th>#</th>
           <th>Nome</th>
-              <th>login</th>
-              <th>senha</th>
-              <th>cargo</th>
-              <th>Ação</th>
+              <th>descricao</th>
+              <th>valor</th>
+              <th>quantidade</th>
+              <th>img</th>
+              <th>data</th>
           </tr>
         </thead>
-
+<!--
         <tbody>
-          <?php foreach($usuarios as $usuario ) { ?>
+          <?php foreach($usuarios as $usu ) { ?>
             <tr>
-            <td> <?=$usuario['idUsuario']?></td>    
-            <td> <?=$usuario['nome']?></td>
-                <td> <?=$usuario['login']?></td>
-                <td> <?=$usuario['senha']?></td>
-                <td> <?=$usuario['cargo']?></td>
+            <td> <?=$usu['idUsuario']?></td>    
+            <td> <?=$usu['nome']?></td>
+                <td> <?=$usu['login']?></td>
+                <td> <?=$usu['senha']?></td>
+                <td> <?=$usu['cargo']?></td>
                 <td>
-                    
-                <a href="<?= base_url()?>usuario/edit/<?=$usuario['idUsuario'] ?>">
-                    <i class="small material-icons">edit</i>
-                    </a>
-
-                    <a href="<?= base_url()?>Usuario/delete/<?=$usuario['idUsuario'] ?>" > 
+                    <a href="<?= base_url()?>Usuario/delete<?=$usu['idUsuario'] ?>" > 
                     <i class="small material-icons">delete</i>
                     </a>
-
                 </td>
             </tr>
             <?php } ?>
         </tbody>
+        -->
       </table>
-      <a href="usuario/formulario" class="right btn-floating btn-large waves-effect waves-light red">
+      <a href="produto/formulario_produto" class="right btn-floating btn-large waves-effect waves-light red">
           <i class="material-icons">add</i></a>
             
           </div>
@@ -74,7 +69,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <ul class="sidenav" id="mobile-demo">
     <li><a href="#">Login</a></li>
   </ul>
-          
 
     </body>
 </html>
