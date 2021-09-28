@@ -42,6 +42,7 @@ $this->load->model('UsuarioModel');
         redirect("usuario");
     }
 
+
     public function edit($id){
 
         $dados['usuario'] = $this->UsuarioModel->show($id);
@@ -61,24 +62,9 @@ $this->load->model('UsuarioModel');
 
         redirect("usuario");
 
-    }
+    }    
+
     
-
-    function gravar(){
-
-        #$this->idUsuario = $_POST['idUsuario']; 
-        $this->nome = $_POST['nome']; 
-        $this->login = $_POST['login'];
-        $this->senha = $_POST['senha'];
-        $this->cargo = $_POST['cargo'];
-
-        if ($this->db->insert('usuario', $this)){
-            return $this->load->view('home_page');
-            
-        }
-    }
-    
-
     function delete($idUsuario){
         // exclui o dado da tabela pelo seu id
         $this->UsuarioModel->destroy($idUsuario);
