@@ -31,11 +31,14 @@
                 <ul class="right hide-on-med-and-down">
                     <li><a href="<?=base_url('usuario')?>">Usuarios</a></li>
                     <li><a href="<?=base_url('produto')?>">Produtos</a></li>
+                    <li><a href="<?=base_url('login/logout')?>">Sair</a></li>
                 </ul>
             </div>
         </nav>
         <ul class="sidenav" id="mobile-demo">
-            <li><a href="#">Login</a></li>
+        <li><a href="<?=base_url('usuario')?>">Usuarios</a></li>
+                    <li><a href="<?=base_url('produto')?>">Produtos</a></li>
+                    <li><a href="<?=base_url('login/logout')?>">Sair</a></li>
         </ul>
     </body>
 </html>

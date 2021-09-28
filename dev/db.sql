@@ -50,7 +50,8 @@ values(1,'Santiago','sgt',123456789, 1),
 
  insert into cargo(idCargo, descricao, idUsuario)
  values (1, 'administrador',1),
-        (2, 'usuario',2);
+        (2, 'usuario',2),
+        (3, 'usuario',3);
 
 insert into produto(idProduto, nome, descricao, valor, quantidade, data_cadastro)
 values(1, 'Tomate', 'Leguminoso', 23, '2', '12:12:12'),

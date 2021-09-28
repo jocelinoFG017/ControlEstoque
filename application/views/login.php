@@ -42,7 +42,7 @@
             <div id='divCenter' >
                 <div class="row" >
                     <div class="input-field col s6 center">
-                        <input id="login" type="email" name="login" class="validate">
+                        <input id="login" type="text" name="login" required class="validate">
                         <label class="active" for="login">Login</label>
                     </div>
                 </div>

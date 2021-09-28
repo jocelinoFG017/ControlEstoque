@@ -16,7 +16,7 @@ class Login extends CI_Controller{
 
       $login = $_POST["login"];
       $senha = $_POST["senha"];
-      $cargo = $_POST["cargo"];
+      $cargo = $_POST["idCargo"];
 
       //$this->db->where("idCargo", $cargo);
 
