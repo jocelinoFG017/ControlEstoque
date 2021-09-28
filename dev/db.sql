@@ -2,7 +2,7 @@ Drop Schema estoque;
 CREATE database IF NOT EXISTS estoque;
 
 use estoque;
-
+SET FOREIGN_KEY_CHECKS=0;
 
 -- Tabela Produtos
 
@@ -18,6 +18,7 @@ CREATE TABLE IF NOT EXISTS produto (
 )ENGINE=InnoDB DEFAULT CHARSET=UTF8 COLLATE=utf8_general_ci;
 
 
+
 -- Tabela Usuarios
 
 CREATE TABLE IF NOT EXISTS usuario(
@@ -25,37 +26,31 @@ CREATE TABLE IF NOT EXISTS usuario(
   nome VARCHAR(45) NOT NULL,
   login VARCHAR(45) NOT NULL,
   senha VARCHAR(45) NOT NULL,
-  cargo VARCHAR(45) NOT NULL,
+  idCargo INT NOT NULL,
   PRIMARY KEY(idUsuario)
 )ENGINE=InnoDB DEFAULT CHARSET=UTF8 COLLATE=utf8_general_ci;
-
 
 --  Tabela Cargo
 
 CREATE TABLE IF NOT EXISTS cargo(
   idCargo INT NOT NULL auto_increment,
-  descricao VARCHAR(45),
-  usuario INT,
+  descricao VARCHAR(45) NOT NULL,
   PRIMARY KEY(idCargo),
-  CONSTRAINT fk_usuario FOREIGN KEY (usuario) REFERENCES Usuario (idUsuario)
+  idUsuario int not null,
+  CONSTRAINT fk_usuario FOREIGN KEY (idUsuario) REFERENCES usuario (idUsuario)
 )ENGINE=InnoDB DEFAULT CHARSET=UTF8 COLLATE=utf8_general_ci;
 
 
+-- Populando tabelas
 
-
-
-
-
- insert into usuario (idUsuario, nome, login, senha, cargo)
+insert into usuario (idUsuario, nome, login, senha, idCargo)
 values(1,'Santiago','sgt',123456789, 1),
       (2,'Gaules','gaules@gau.com',123, 2),
-      (3,'Victoria','vick@gmail.com',123, 2),
+      (3,'Victoria','vick@gmail.com',123, 2);
 
- insert into cargo(idCargo, descricao,usuario)
- values(1, 'administrador',1),
- values(2, 'usuario',2),
- values(3, 'usuario',3);
-
+ insert into cargo(idCargo, descricao, idUsuario)
+ values (1, 'administrador',1),
+        (2, 'usuario',2);
 
 insert into produto(idProduto, nome, descricao, valor, quantidade, data_cadastro)
 values(1, 'Tomate', 'Leguminoso', 23, '2', '12:12:12'),
