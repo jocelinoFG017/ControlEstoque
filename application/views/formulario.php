@@ -57,7 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   </div>
   <div class="row">
     <div class="input-field col s6">
-      <input  id="login" type="text" name="login" class="validate" required value="<?= isset($usuario) ? $usuario['login'] : "" ?>">
+      <input  id="login" type="email" name="login" class="validate" required value="<?= isset($usuario) ? $usuario['login'] : "" ?>">
       <label class="active" for="login">Login</label>
     </div>
   </div>

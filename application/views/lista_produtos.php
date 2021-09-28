@@ -38,28 +38,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <th>descricao</th>
               <th>valor</th>
               <th>quantidade</th>
-              <th>img</th>
               <th>data</th>
           </tr>
         </thead>
-<!--
+
         <tbody>
-          <?php foreach($usuarios as $usu ) { ?>
+          <?php foreach($produtos as $produto ) { ?>
             <tr>
-            <td> <?=$usu['idUsuario']?></td>    
-            <td> <?=$usu['nome']?></td>
-                <td> <?=$usu['login']?></td>
-                <td> <?=$usu['senha']?></td>
-                <td> <?=$usu['cargo']?></td>
-                <td>
-                    <a href="<?= base_url()?>Usuario/delete<?=$usu['idUsuario'] ?>" > 
+            <td> <?=$produto['idProduto']?></td>    
+            <td> <?=$produto['nome']?></td>
+            <td> <?=$produto['descricao']?></td>
+            <td> <?=$produto['valor']?></td>
+                <td> <?=$produto['quantidade']?></td>
+                <td> <?=$produto['data_cadastro']?></td>
+               <td>
+                    
+                <a href="<?= base_url()?>usuario/edit/<?=$produto['idProduto'] ?>">
+                    <i class="small material-icons">edit</i>
+                    </a>
+
+                    <a href="javascript:goDelete(<?=$produto['idProduto'] ?>)" > 
                     <i class="small material-icons">delete</i>
                     </a>
+
                 </td>
             </tr>
             <?php } ?>
         </tbody>
-        -->
+
       </table>
       <a href="produto/formulario_produto" class="right btn-floating btn-large waves-effect waves-light red">
           <i class="material-icons">add</i></a>
@@ -71,5 +77,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   </ul>
 
     </body>
+    
+    <script>
+        function goDelete(id){
+            var myUrl = "Produto/delete/"+id; 
+            var url2 = "Produto";
+
+            if(confirm("Tem certeza ?")){
+                window.location.href = myUrl;
+            }else{
+                alert("Nada alterado");
+                window.location.href = url;
+            }
+        }
+        </script>
 </html>
 

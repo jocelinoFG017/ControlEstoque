@@ -10,9 +10,9 @@ CREATE TABLE IF NOT EXISTS produto (
   idProduto smallINT(11) NOT NULL auto_increment,
   nome VARCHAR(45) NOT NULL,
   descricao VARCHAR(70) NOT NULL,
-  valor DECIMAL(6,2) NOT NULL,
+  valor INTEGER NOT NULL,
   quantidade VARCHAR(45) NOT NULL,
-  img VARCHAR(100),
+  -- img VARCHAR(100),
   data_cadastro DATE NOT NULL,
   PRIMARY KEY (idProduto)
 )ENGINE=InnoDB DEFAULT CHARSET=UTF8 COLLATE=utf8_general_ci;
@@ -44,3 +44,13 @@ CREATE TABLE IF NOT EXISTS cargo(
 
 
 
+
+ insert into usuario (idUsuario, nome, login, senha, cargo)
+values(1,'Santiago', 'sgt',123456789, 1);
+
+ insert into cargo(idCargo, usuario)
+ values(1, 1);
+
+
+insert into produto(idProduto, nome, descricao, valor, quantidade, data_cadastro)
+values(1, 'Tomate', 'Leguminoso', 23, '2', '12:12:12')
