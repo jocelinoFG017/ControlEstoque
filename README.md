@@ -15,3 +15,10 @@ HTML, CSS, PHP, MYSQL.
 ## 2º Banco de Dados
  - O arquivo .sql pode ser encontrado na pasta \dev
 
+## 3º Usuarios para login
+
+I - login: sgt                    senha:123456789
+
+II - login: gaules@gau.com        senha:123
+
+III - login: vick@gmail.com       senha:123   

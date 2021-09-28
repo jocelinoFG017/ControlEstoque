@@ -10,6 +10,7 @@ class Produto extends CI_Controller{
     
     
     function index(){
+        permission();
         //  Carregando modelo de Produto
         $this->load->model('ProdutoModel');
 
